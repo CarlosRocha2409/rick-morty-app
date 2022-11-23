@@ -1,0 +1,89 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+
+@import url(./assets/fonts/fonts.css);
+body {
+    background: #202020;
+    color: white;
+}
+
+.title {
+    font-size: 2.7rem;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Get Schwifty';
+    animation: infinite 2s title-ani;
+    color: greenyellow;
+}
+
+.creator {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    padding: 20px;
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+    background: greenyellow;
+    font-weight: bold;
+    margin-bottom: 2px;
+    font-family: 'Get Schwifty';
+    color: black;
+    font-size: 30px;
+    transition: 0.5s;
+    @media screen and (min-width: 768px) {
+        font-size: 40px;
+    }
+    cursor: pointer;
+    filter: brightness(1);
+    &:hover {
+        filter: brightness(0.5);
+    }
+    &:disabled {
+        filter: brightness(0.5);
+    }
+}
+
+.character {
+    background: #101010;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.character img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+@keyframes title-ani {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
